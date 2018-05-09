@@ -10,7 +10,7 @@ B 3 ,Seat is vacant,-
 B 4 ,Seat is vacant,- 
 B 5 ,Seat is vacant,- 
 B 6 ,Seat is vacant,- 
-C 1 ,Seat is vacant,- 
+C 1 ,Name: thomas ,child: true,-
 C 2 ,Seat is vacant,- 
 C 3 ,Seat is vacant,- 
 C 4 ,Seat is vacant,- 
@@ -70,4 +70,6 @@ F 6 ,Seat is vacant,-
  4 ,Seat is vacant,- 
  5 ,Seat is vacant,- 
  6 ,Seat is vacant,- 
-acant,- 
+
+t,- 
+ 6 ,Seat is vacant,- 

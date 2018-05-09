@@ -9,12 +9,14 @@ import java.util.*;
  *
  * @author User
  */
-public class Customers {
+public class Customers implements Comparable<Customers>{
     // private varibles 
     private String CustomerName;
     private boolean Child;
     private String FlightClass;
     private String SeatType;
+    private int Row;
+    private int Column;
   
     // getters and setters
     public String GetCustomerName()
@@ -70,6 +72,8 @@ public class Customers {
     }
     // asin       
     public Customers[][] AllocateSeats (Customers cust, Customers[][] custarry)
+    
+    
     {
         //swich statement for Allocateing Seats
         switch(cust.FlightClass) 
@@ -95,6 +99,9 @@ public class Customers {
                       {
                         //sit them here
                         custarry[i][j] = cust;
+                        custarry[i][j].Row = i;
+                        custarry[i][j].Column = j;
+                                ;
                         Steve = true;
                       }
                       
@@ -123,6 +130,8 @@ public class Customers {
                       {
                         //seat them here
                         custarry[i][j] = cust; 
+                        custarry[i][j].Row = i;
+                        custarry[i][j].Column = j;
                          Steve = true;
                       }
                       
@@ -152,6 +161,8 @@ public class Customers {
                       {
                         //seat them here
                         custarry[i][j] = cust; 
+                        custarry[i][j].Row = i;
+                        custarry[i][j].Column = j;
                         Steve = true;
                       }
                       
@@ -182,6 +193,8 @@ public class Customers {
                       {
                         //seat them here
                         custarry[i][j] = cust;  
+                        custarry[i][j].Row = i;
+                        custarry[i][j].Column = j;
                         Steve = true;
                       }
                       
@@ -203,6 +216,8 @@ public class Customers {
                       if("".equals(custarry[i][j].CustomerName))
                       {
                         custarry[i][j] = cust;
+                        custarry[i][j].Row = i;
+                        custarry[i][j].Column = j;
                         Steve = true;
                       }
                       
@@ -225,6 +240,8 @@ public class Customers {
                       if("".equals(custarry[i][j].CustomerName))
                       {
                         custarry[i][j] = cust;
+                        custarry[i][j].Row = i;
+                        custarry[i][j].Column = j;
                         Steve = true;
                       }
                       
@@ -248,7 +265,9 @@ public class Customers {
                    {
                       if("".equals(custarry[i][j].CustomerName))
                       {
-                        custarry[i][j] = cust; 
+                        custarry[i][j] = cust;
+                        custarry[i][j].Row = i;
+                        custarry[i][j].Column = j;
                         Steve = true;
                       }
                       
@@ -270,6 +289,8 @@ public class Customers {
                       if("".equals(custarry[i][j].CustomerName))
                       {
                         custarry[i][j] = cust;
+                        custarry[i][j].Row = i;
+                        custarry[i][j].Column = j;
                         Steve = true;
                       }
                       
@@ -292,6 +313,8 @@ public class Customers {
                       if("".equals(custarry[i][j].CustomerName))
                       {
                         custarry[i][j] = cust;
+                        custarry[i][j].Row = i;
+                        custarry[i][j].Column = j;
                         Steve = true;
                       }
                       
@@ -406,70 +429,6 @@ public class Customers {
         return FileData;
         
     }
-    // method for converting file data in to a customer array(unfinished PAIN IN THE ASS)
-   /* public Customers[][] ConvertFiledata(String File) 
-    { 
-        Customers[][] custarry = new Customers[6][12];
-        List<String> Spliterlist = Arrays.asList(File.split("-"));
-        int j = 0;
-        int y = 0;
-                
-        for(int i = 0; i < Spliterlist.size(); i++) 
-        {
-             
-            String bum = Spliterlist.get(i);
-            List<String> Seats = Arrays.asList(bum.split(","));
-            
-            if("Seat is vacant".equals(Seats.get(1)))
-            {
-              custarry[j][y] = new Customers("",false,"","");
-            }
-            else 
-            {
-               String[] name = Seats.get(1).split(" ");
-               String[] child = Seats.get(2).split(" ");
-               String[] posishon = Seats.get(0).split(" ");
-               if (posishon[0])
-               {
-                   
-               }
-               else if () 
-               {
-               
-               }
-               else
-               {
-                   
-               }
-               if ()
-               {
-                   
-               }
-               else if () 
-               {
-               
-               }
-               else
-               {
-                   
-               }
-               
-               custarry[j][y] = new Customers(name[1],,"","");
-            }
-            j++;
-            if ( j == 12)
-            {
-               y++;
-               j = 0;
-            }
-            
-            
-        }
-        
-        
-        return custarry;
-    } */
-    
     // makes sure that the arry has been created 
     public Customers[][] OneFooeBoy(Customers[][] blackBox)
     {
@@ -492,5 +451,66 @@ public class Customers {
         return blackBox;
     }
     
-  
-}
+    public int GetRow () 
+    {
+       return this.Row;
+    }
+    public void SetRow (int row) 
+    {
+        this.Row = row;
+    }
+    public int GetColumn () 
+    {
+        return this.Column;
+    }
+    public void SetColumn (int column) 
+    {
+        this.Column = column;
+    }
+    //this need to return and int other wize i can't deate it from the arry 
+    public int BinaySearch (Customers[] NICKISAFURRY)
+    {  
+        Customers CustomerToBeReturn = new Customers();
+        int low = 0;
+       int high = NICKISAFURRY.length -1;
+       int mid;
+        while ( low <= high)
+        {
+            mid = (low + high)/ 2;
+        if (NICKISAFURRY[mid].compareTo(this) < 0)
+            {
+                low = mid + 1;
+            }
+            else if (NICKISAFURRY[mid].compareTo(this) > 0)
+            {
+               low = mid - 1; 
+            }
+            else 
+            {
+                return mid; 
+            }
+            
+        }
+        return -1;
+    }
+    public Customers[] AddCustToArry(Customers[] BinarySearchArry ,Customers cust) 
+    {  int y =  BinarySearchArry.length;                
+        if (y > 1)
+        {
+            Customers[] nextGenBinarySearchArry = new Customers[y + 1];
+            System.arraycopy(BinarySearchArry, 0, nextGenBinarySearchArry, 0, y - 1);
+            nextGenBinarySearchArry[y - 1] = cust;
+            BinarySearchArry = nextGenBinarySearchArry;
+        }
+        else{
+            BinarySearchArry[y - 1] = cust;
+        }
+        return BinarySearchArry;
+    }
+    //
+    @Override 
+    public int compareTo (Customers cust) 
+    {
+       return CustomerName.compareTo(cust.GetCustomerName());
+    }
+  }

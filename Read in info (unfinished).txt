@@ -1,0 +1,63 @@
+  // method for converting file data in to a customer array(unfinished PAIN IN THE ASS)
+   /* public Customers[][] ConvertFiledata(String File) 
+    { 
+        Customers[][] custarry = new Customers[6][12];
+        List<String> Spliterlist = Arrays.asList(File.split("-"));
+        int j = 0;
+        int y = 0;
+                
+        for(int i = 0; i < Spliterlist.size(); i++) 
+        {
+             
+            String bum = Spliterlist.get(i);
+            List<String> Seats = Arrays.asList(bum.split(","));
+            
+            if("Seat is vacant".equals(Seats.get(1)))
+            {
+              custarry[j][y] = new Customers("",false,"","");
+            }
+            else 
+            {
+               String[] name = Seats.get(1).split(" ");
+               String[] child = Seats.get(2).split(" ");
+               String[] posishon = Seats.get(0).split(" ");
+               if (posishon[0])
+               {
+                   
+               }
+               else if () 
+               {
+               
+               }
+               else
+               {
+                   
+               }
+               if ()
+               {
+                   
+               }
+               else if () 
+               {
+               
+               }
+               else
+               {
+                   
+               }
+               
+               custarry[j][y] = new Customers(name[1],,"","");
+            }
+            j++;
+            if ( j == 12)
+            {
+               y++;
+               j = 0;
+            }
+            
+            
+        }
+        
+        
+        return custarry;
+    } */
